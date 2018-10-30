@@ -1,2 +1,2 @@
 # py_share
-python股票分析工具
+>python股票分析工具
