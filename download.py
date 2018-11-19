@@ -1,5 +1,4 @@
-import tushare as ts
-import pandas as pd
+from comm_pkg import *
 
 STOCK_BASICS_NAME = "data\\stock_basics.csv"
 INDEX_COL_NAME = "code"
@@ -15,7 +14,9 @@ class Stock:
             return 1
         for(c1, c2) in zip(code1, code2):
             if int(c1) != int(c2):
-                print("code %d != %d" % (c1, c2))
+                print(code1)
+                print(code2)
+                print("code %d != %d" % (int(c1), int(c2)))
                 return 1
         return 0
     def update_stock_basic(self, force = 0):
