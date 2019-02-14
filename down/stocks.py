@@ -1,14 +1,16 @@
 from comm_pkg import *
 from comm_pkg import namespace as ns
 from util.util import util
+from util.dir_util import dir_util
 
 
-class stock_info(util):
+class stocks(util, dir_util):
     def __init__(self):
-        util.__init__(self, ns.root)
-        self.__code = None
+        dir_util.__init__(self, ns.root)
+        util.__init__(self)
+        self.__codes = None
         self.__sinfo_path = os.path.join(ns.root, ns.sinfo_name)
-    def _check_code(self, pd1, pd2):
+    def _cmp_codes(self, pd1, pd2):
         code1 = self._ts_code_2_list(pd1.index)
         code2 = self._ts_code_2_list(pd2.index)
         #self._dbg(pd2.index)
@@ -19,11 +21,11 @@ class stock_info(util):
         #print(df_new)
         #df_new = df_new[[INDEX_COL_NAME,]]
         #print(df_new)
-        self._dbg("dbg test\n")
+        self.dbg("dbg test\n")
         #asdfssdf
         if(force):
-            self._dbg("force generate new\n")
-            self.__code = self._ts_code_2_list(df_new.index)
+            self.info("force generate new\n")
+            self.__codes = self._ts_code_2_list(df_new.index)
             df_new.to_csv(self.__sinfo_path)
         else:
             df_old = None
@@ -33,12 +35,12 @@ class stock_info(util):
             except Exception:
                 wrong_file = 1
             if (1 == wrong_file):
-                self._dbg("wrong file, generate new\n")
+                self.info("wrong file, generate new\n")
                 df_new.to_csv(self.__sinfo_path)
-            elif(False == self._check_code(df_new, df_old)):
-                self._dbg("code dose not match, generate new\n")
+            elif(False == self._cmp_codes(df_new, df_old)):
+                self.info("code dose not match, generate new\n")
                 df_new.to_csv(self.__sinfo_path)
-            self.__code = self._ts_code_2_list(df_new.index)
+            self.__codes = self._ts_code_2_list(df_new.index)
         return
-    def get_code(self):
-        return self.__code
+    def get_codes(self):
+        return self.__codes

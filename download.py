@@ -1,13 +1,13 @@
-from down.stock_info import stock_info
+from down.stocks import stocks
 class down:
     def __init__(self):
         pass
     def download(self):
-        sinfo = stock_info()
+        sinfo = stocks()
         sinfo.update_stock_basic()
-        codes = sinfo.get_code()
-        for code in codes:
-            print(code)
+        codes = sinfo.get_codes()
+        #for code in codes:
+        #    print(code)
 
 if __name__ == "__main__":
     d = down()

@@ -6,4 +6,8 @@ class namespace:
     root = "data"
     sinfo_name = "stock_basics.csv"
     sinfo_idx = "ts_code"
+    debug = 0
+    warn = 1
+    err = 1
+    info = 1
 
