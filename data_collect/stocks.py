@@ -2,12 +2,14 @@ from comm_pkg import *
 from comm_pkg import namespace as ns
 from util.util import util
 from util.dir_util import dir_util
+from util.ts_util import ts_util
 
 
-class stocks(util, dir_util):
+class stocks(util, dir_util, ts_util):
     def __init__(self):
         dir_util.__init__(self, ns.root)
         util.__init__(self)
+        ts_util.__init__(self)
         self.__codes = None
         self.__sinfo_path = os.path.join(ns.root, ns.sinfo_name)
     def _cmp_codes(self, pd1, pd2):

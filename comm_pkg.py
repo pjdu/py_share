@@ -3,11 +3,16 @@ import pandas as pd
 from abc import ABCMeta, abstractmethod
 import os
 class namespace:
-    root = "data"
-    sinfo_name = "stock_basics.csv"
-    sinfo_idx = "ts_code"
-    debug = 0
-    warn = 1
-    err = 1
-    info = 1
+    ROOT = "data"
+    SINFO_NAME = "stock_basics.csv"
+    SINFO_IDX = "ts_code"
+    DATE_BEGIN = '20140601'
+    YEAR = 2014
+    MONTH = 6
+    DAY = 1
+    DEBUG = 0
+    WARN = 1
+    ERR = 1
+    INFO = 1
+    FORCE_WRITE = False
 

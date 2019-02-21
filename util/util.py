@@ -8,6 +8,5 @@ class util(list_util, debug_util, pd_list_util):
         list_util.__init__(self)
         debug_util.__init__(self)
         pd_list_util.__init__(self)
-        self._pro = ts.pro_api("3b239c5c08e5e691a718fb15dd986555fe2f7b11f1b078af61692fe0")
         pass
     

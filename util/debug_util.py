@@ -2,10 +2,10 @@ from comm_pkg import *
 
 class debug_util:
     def __init__(self):
-        self.__dbg = namespace.debug
-        self.__info = namespace.info
-        self.__warn = namespace.warn
-        self.__err = namespace.err
+        self.__dbg = namespace.DEBUG
+        self.__info = namespace.INFO
+        self.__warn = namespace.WARN
+        self.__err = namespace.ERR
     def dbg(self, arg1):
         if(self.__dbg):
             print(arg1, end='')
