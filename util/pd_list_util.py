@@ -1,4 +1,4 @@
-from comm_pkg import *
+from config import *
 
 class pd_list_util:
     def __init__(self):

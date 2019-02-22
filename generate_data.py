@@ -2,7 +2,7 @@
 from util.ts_util import *
 from util.debug_util import *
 from data_collect.date import *
-from comm_pkg import *
+from config import *
 import time
 class gen():
     def __init__(self):
@@ -19,7 +19,7 @@ class gen():
             if v == 1:
                 obj_date = date(now)
                 if False == obj_date.have_daily_data() or namespace.FORCE_WRITE == True:
-                    obj_date.write_daily(self._share.get_trade_daily(now))
+                    obj_date.write_daily(self._share)
             iter_time = iter_time + 24*60*60
         pass
 

@@ -1,4 +1,4 @@
-from comm_pkg import *
+from config import *
 
 class debug_util:
     def __init__(self):

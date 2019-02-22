@@ -7,7 +7,7 @@ class namespace:
     SINFO_NAME = "stock_basics.csv"
     SINFO_IDX = "ts_code"
     DATE_BEGIN = '20140601'
-    YEAR = 2014
+    YEAR = 2000
     MONTH = 6
     DAY = 1
     DEBUG = 0

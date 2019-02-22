@@ -1,4 +1,4 @@
-from comm_pkg import *
+from config import *
 from util.pd_list_util import *
 class ts_util(pd_list_util):
     def __init__(self):

@@ -1,14 +1,11 @@
-from comm_pkg import *
+from config import *
 from util.util import util
-from util.dir_util import dir_util
+from data_collect.data_file import data_file
 
-class date(util, dir_util):
+class date(util, data_file):
     def __init__(self, date):
         util.__init__(self)
-        dir_util.__init__(self, os.path.join(namespace.ROOT, date))
-        self.__date = date
-        self.__daily_path = os.path.join(os.path.join(namespace.ROOT, self.__date), 'daily.csv')
-    def write_daily(self, pd):
-        pd.to_csv(self.__daily_path)
-    def have_daily_data(self):
-        return os.path.exists(self.__daily_path)
+        data_file.__init__(self, date, 'daily.csv')
+    def write_daily(self, share):
+        pd = share.get_trade_daily(self._date)
+        pd.to_csv(self._daily_path)
