@@ -6,5 +6,8 @@ class data_file(dir_util):
         dir_util.__init__(self, os.path.join(namespace.ROOT, date))
         self._date = date
         self._daily_path = os.path.join(os.path.join(namespace.ROOT, self._date), name)
-    def have_daily_data(self):
+    def have_data(self):
         return os.path.exists(self._daily_path)
+    def write_empty_file(self):
+        f = open(self._daily_path,'w')
+        f.close()
